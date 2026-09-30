@@ -1,0 +1,179 @@
+/* Home-only revision. Other screens retain their existing layout and behavior. */
+.home {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100svh;
+  padding: 0 24px;
+}
+.home > .home-header {
+  height: 88px;
+  padding: 0;
+}
+.home .brand { gap: 0; }
+.home .brand-mark {
+  width: 57px;
+  font-size: 31px;
+  line-height: .89;
+  letter-spacing: -3px;
+}
+.home .menu-button { margin-right: -9px; }
+.home .home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(420px, 1fr) auto;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+}
+.home .home-copy {
+  padding: 20px 0 0;
+  align-self: start;
+}
+.home .home-copy h1 {
+  font-size: clamp(28px, 9.2vw, 38px);
+  font-weight: 900;
+  line-height: 1.22;
+  letter-spacing: -1.7px;
+  white-space: normal;
+}
+.home .home-copy h1 > span,
+.home .home-copy h1 > em { display: block; white-space: nowrap; }
+.home .home-copy > p {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -.4px;
+}
+.home .home-art {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
+  height: 100%;
+  padding: 0;
+  margin-top: 2px;
+  display: block;
+  overflow: hidden;
+  align-self: stretch;
+}
+.home .buddha-figure {
+  position: absolute;
+  top: 6px;
+  left: calc(50% + 35px);
+  transform: translateX(-50%);
+  height: min(calc(100% - 10px), 490px);
+  width: auto;
+  max-width: none;
+  aspect-ratio: 3 / 4;
+}
+.home .buddha-figure > img { width: 100%; height: 100%; object-fit: contain; }
+.home .bin-label { font-size: 29px; top: 64.5%; left: 46.7%; }
+.home .home-art > .brand-bubble {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  width: 172px;
+  min-height: 61px;
+  padding: 16px 10px;
+  transform: none;
+  font-family: Gulim, '굴림', Dotum, sans-serif !important;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -.45px;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: black;
+  -webkit-text-stroke: .25px white;
+  white-space: nowrap;
+}
+.home .home-art > .brand-bubble::before,
+.home .home-art > .brand-bubble::after {
+  content: none;
+}
+.home .bubble-outline {
+  position: absolute;
+  inset: -1px auto auto -1px;
+  width: calc(100% + 20px);
+  height: calc(100% + 2px);
+  overflow: visible;
+  pointer-events: none;
+}
+.home .bubble-copy { position: relative; }
+.home .home-cta {
+  grid-column: 1;
+  grid-row: 3;
+  width: 100%;
+  max-width: none;
+  padding: 10px 0 max(24px, env(safe-area-inset-bottom));
+  margin: 0;
+  align-self: end;
+}
+.home .home-cta .action { min-height: 60px; font-size: 17px; }
+.home .home-cta .action > span { font-size: 24px; line-height: 1; font-weight: 400; }
+.home .home-cta > p { margin: 12px 0 0; font-size: 11px; text-align: center; }
+@media (max-width: 767px) and (max-height: 740px) {
+  .home > .home-header { height: 76px; }
+  .home .home-copy { padding-top: 9px; }
+  .home .home-copy h1 { font-size: clamp(27px, 8.7vw, 34px); }
+  .home .home-copy > p { margin-top: 10px; font-size: 14px; }
+  .home .home-layout { grid-template-rows: auto minmax(310px, 1fr) auto; }
+  .home .buddha-figure { left: calc(50% + 29px); }
+  .home .home-art > .brand-bubble { top: 37px; width: 155px; min-height: 54px; font-size: 12.5px; }
+  .home .bin-label { font-size: 23px; }
+  .home .home-cta { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+  .home .home-cta .action { min-height: 54px; }
+  .home .home-cta > p { margin-top: 9px; font-size: 10px; }
+}
+@media (max-width: 350px) {
+  .home { padding-inline: 18px; }
+  .home .home-copy h1 { letter-spacing: -1.3px; }
+  .home .home-copy > p { font-size: 13px; }
+  .home .home-art > .brand-bubble { width: 146px; font-size: 12px; }
+}
+@media (min-width: 768px) {
+  .home { padding-inline: 60px; }
+  .home > .home-header { height: 110px; }
+  .home .brand-mark { font-size: 36px; width: 67px; }
+  .home .home-layout {
+    grid-template-columns: 1.05fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 28px;
+    align-content: center;
+    min-height: calc(100svh - 110px);
+    padding-bottom: 24px;
+  }
+  .home .home-copy { grid-column: 1; grid-row: 1; padding: 0; align-self: end; }
+  .home .home-copy h1 { font-size: clamp(34px, 4.8vw, 62px); line-height: 1.22; letter-spacing: -2.5px; }
+  .home .home-copy > p { font-size: clamp(15px, 1.6vw, 19px); margin-top: 24px; }
+  .home .home-art {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    height: min(690px, calc(100svh - 150px));
+    min-height: 530px;
+    margin: 0;
+    align-self: center;
+  }
+  .home .buddha-figure { height: calc(100% - 10px); top: 5px; left: calc(50% + 37px); }
+  .home .bin-label { font-size: clamp(32px, 3.2vw, 42px); }
+  .home .home-art > .brand-bubble {
+    top: 14%;
+    left: 0;
+    width: clamp(175px, 16vw, 211px);
+    min-height: 72px;
+    padding: 18px 12px;
+    font-size: clamp(13px, 1.2vw, 16px);
+    letter-spacing: -.5px;
+  }
+  .home .home-cta {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    max-width: 368px;
+    padding: 38px 0 0;
+  }
+  .home .home-cta .action { min-height: 62px; font-size: 18px; }
+  .home .home-cta > p { text-align: left; margin-left: 8px; font-size: 11px; }
+}
